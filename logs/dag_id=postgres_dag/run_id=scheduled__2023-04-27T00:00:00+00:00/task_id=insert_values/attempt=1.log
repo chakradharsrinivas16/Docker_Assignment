@@ -1,0 +1,94 @@
+[2023-06-14T13:45:10.928+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: postgres_dag.insert_values scheduled__2023-04-27T00:00:00+00:00 [queued]>
+[2023-06-14T13:45:10.992+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: postgres_dag.insert_values scheduled__2023-04-27T00:00:00+00:00 [queued]>
+[2023-06-14T13:45:10.997+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-06-14T13:45:11.097+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): insert_values> on 2023-04-27 00:00:00+00:00
+[2023-06-14T13:45:11.136+0000] {standard_task_runner.py:57} INFO - Started process 298 to run task
+[2023-06-14T13:45:11.160+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'postgres_dag', 'insert_values', 'scheduled__2023-04-27T00:00:00+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/create_database_postgres.py', '--cfg-path', '/tmp/tmp2emu1res']
+[2023-06-14T13:45:11.164+0000] {standard_task_runner.py:85} INFO - Job 46: Subtask insert_values
+[2023-06-14T13:45:11.283+0000] {task_command.py:410} INFO - Running <TaskInstance: postgres_dag.insert_values scheduled__2023-04-27T00:00:00+00:00 [running]> on host 770b1916921e
+[2023-06-14T13:45:11.650+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='postgres_dag' AIRFLOW_CTX_TASK_ID='insert_values' AIRFLOW_CTX_EXECUTION_DATE='2023-04-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-04-27T00:00:00+00:00'
+[2023-06-14T13:45:11.654+0000] {sql.py:262} INFO - Executing: 
+INSERT INTO myTime VALUES (CURRENT_TIMESTAMP);
+[2023-06-14T13:45:11.761+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 263, in execute
+    hook = self.get_db_hook()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 181, in get_db_hook
+    return self._hook
+  File "/home/airflow/.local/lib/python3.7/site-packages/cached_property.py", line 36, in __get__
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 143, in _hook
+    conn = BaseHook.get_connection(self.conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 434, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `postgres_conn` isn't defined
+[2023-06-14T13:45:11.784+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=postgres_dag, task_id=insert_values, execution_date=20230427T000000, start_date=20230614T134510, end_date=20230614T134511
+[2023-06-14T13:45:11.829+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 46 for task insert_values (The conn_id `postgres_conn` isn't defined; 298)
+[2023-06-14T13:45:11.911+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-14T13:45:11.973+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-06-14T13:54:07.708+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: postgres_dag.insert_values scheduled__2023-04-27T00:00:00+00:00 [queued]>
+[2023-06-14T13:54:07.744+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: postgres_dag.insert_values scheduled__2023-04-27T00:00:00+00:00 [queued]>
+[2023-06-14T13:54:07.752+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-06-14T13:54:07.785+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): insert_values> on 2023-04-27 00:00:00+00:00
+[2023-06-14T13:54:07.799+0000] {standard_task_runner.py:57} INFO - Started process 124 to run task
+[2023-06-14T13:54:07.848+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'postgres_dag', 'insert_values', 'scheduled__2023-04-27T00:00:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/create_database_postgres.py', '--cfg-path', '/tmp/tmpzzreikcf']
+[2023-06-14T13:54:07.853+0000] {standard_task_runner.py:85} INFO - Job 27: Subtask insert_values
+[2023-06-14T13:54:08.057+0000] {task_command.py:410} INFO - Running <TaskInstance: postgres_dag.insert_values scheduled__2023-04-27T00:00:00+00:00 [running]> on host e981f43aaef1
+[2023-06-14T13:54:08.257+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='postgres_dag' AIRFLOW_CTX_TASK_ID='insert_values' AIRFLOW_CTX_EXECUTION_DATE='2023-04-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-04-27T00:00:00+00:00'
+[2023-06-14T13:54:08.269+0000] {sql.py:262} INFO - Executing: 
+INSERT INTO myTime VALUES (CURRENT_TIMESTAMP);
+[2023-06-14T13:54:08.329+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 263, in execute
+    hook = self.get_db_hook()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 181, in get_db_hook
+    return self._hook
+  File "/home/airflow/.local/lib/python3.7/site-packages/cached_property.py", line 36, in __get__
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 143, in _hook
+    conn = BaseHook.get_connection(self.conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/connection.py", line 434, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `postgres_conn` isn't defined
+[2023-06-14T13:54:08.333+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=postgres_dag, task_id=insert_values, execution_date=20230427T000000, start_date=20230614T135407, end_date=20230614T135408
+[2023-06-14T13:54:08.348+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 27 for task insert_values (The conn_id `postgres_conn` isn't defined; 124)
+[2023-06-14T13:54:08.389+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-14T13:54:08.428+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-06-14T13:56:54.762+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: postgres_dag.insert_values scheduled__2023-04-27T00:00:00+00:00 [queued]>
+[2023-06-14T13:56:54.793+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: postgres_dag.insert_values scheduled__2023-04-27T00:00:00+00:00 [queued]>
+[2023-06-14T13:56:54.795+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-06-14T13:56:54.822+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): insert_values> on 2023-04-27 00:00:00+00:00
+[2023-06-14T13:56:54.830+0000] {standard_task_runner.py:57} INFO - Started process 124 to run task
+[2023-06-14T13:56:54.836+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'postgres_dag', 'insert_values', 'scheduled__2023-04-27T00:00:00+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/create_database_postgres.py', '--cfg-path', '/tmp/tmp4myqje_1']
+[2023-06-14T13:56:54.839+0000] {standard_task_runner.py:85} INFO - Job 28: Subtask insert_values
+[2023-06-14T13:56:54.972+0000] {task_command.py:410} INFO - Running <TaskInstance: postgres_dag.insert_values scheduled__2023-04-27T00:00:00+00:00 [running]> on host 366197f8877d
+[2023-06-14T13:56:55.116+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='postgres_dag' AIRFLOW_CTX_TASK_ID='insert_values' AIRFLOW_CTX_EXECUTION_DATE='2023-04-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-04-27T00:00:00+00:00'
+[2023-06-14T13:56:55.119+0000] {sql.py:262} INFO - Executing: 
+INSERT INTO myTime VALUES (CURRENT_TIMESTAMP);
+[2023-06-14T13:56:55.148+0000] {base.py:73} INFO - Using connection ID 'postgres_connection' for task execution.
+[2023-06-14T13:56:55.273+0000] {base.py:73} INFO - Using connection ID 'postgres_connection' for task execution.
+[2023-06-14T13:56:55.287+0000] {sql.py:375} INFO - Running statement: 
+INSERT INTO myTime VALUES (CURRENT_TIMESTAMP);, parameters: None
+[2023-06-14T13:56:55.289+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 274, in execute
+    **extra_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 349, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedTable: relation "mytime" does not exist
+LINE 2: INSERT INTO myTime VALUES (CURRENT_TIMESTAMP);
+                    ^
+
+[2023-06-14T13:56:55.303+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=postgres_dag, task_id=insert_values, execution_date=20230427T000000, start_date=20230614T135654, end_date=20230614T135655
+[2023-06-14T13:56:55.318+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 28 for task insert_values (relation "mytime" does not exist
+LINE 2: INSERT INTO myTime VALUES (CURRENT_TIMESTAMP);
+                    ^
+; 124)
+[2023-06-14T13:56:55.382+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-14T13:56:55.412+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check
