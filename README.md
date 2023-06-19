@@ -111,3 +111,5 @@ Dag looks like this -
 
 Validation of entry -
 
+<img width="264" alt="Screenshot 2023-06-15 at 12 02 08 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/3e115b8e-9e8c-4f91-aa6f-2a5f5297d7c9">
+
