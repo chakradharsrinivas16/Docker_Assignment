@@ -38,10 +38,10 @@ The dags folder contains .py files for the dags created in correspondence to que
 ```
 ### Snapshots
 - Dag in the airflow
-<img width="1376" alt="Screenshot 2023-06-15 at 12 08 58 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/3dbcfbea-4bb7-4eab-9dae-f001cd0dc2c5">
+<img width="1424" alt="Screenshot 2023-06-15 at 12 05 02 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/2914420d-2c3b-475a-a879-149288b385e4">
 
 - Entries in the table
-<img width="260" alt="Screenshot 2023-06-14 at 10 34 56 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/260f9ae8-f48e-4198-8622-03661c703d82">
+<img width="260" alt="Screenshot 2023-06-14 at 10 34 56 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/f3cd98f3-89ce-43d9-9891-a3d19e0da68a">
 
 ### Kubernetes Task
 
@@ -104,12 +104,10 @@ vim time_task.py
 
 Now, we can access the airflow webserver by running the command minikube service airflow. My airflow is accessible on below url Upon logging in, the dag was visible, then created a postgres connection and then ran my dag, it has been succesfully executed.
 
-<img width="730" alt="Screenshot 2023-06-15 at 12 05 50 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/c82ec2cb-7004-49d5-8c50-cdde7f37e1ba">
+<img width="730" alt="Screenshot 2023-06-15 at 12 05 50 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/269b903e-a4f7-420e-8c36-66ed0c770d3d">
 
 Dag looks like this - 
-<img width="1376" alt="Screenshot 2023-06-15 at 12 08 58 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/7a90b87f-d4d9-4ba1-9f83-9e63f2c2d3a0">
+<img width="1376" alt="Screenshot 2023-06-15 at 12 08 58 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/5664c34e-fcb6-42e7-842a-07f5c06ec77a">
 
 Validation of entry -
-
-<img width="264" alt="Screenshot 2023-06-15 at 12 02 08 PM" src="https://github.com/chakradharsrinivas16/Docker_Assignment/assets/123494344/93ad704b-0543-4202-b667-1f8d66ba1c18">
 
